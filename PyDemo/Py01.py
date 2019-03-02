@@ -14,14 +14,20 @@ t2 = tf.constant([['Apple', 'Orange'], ['Potato', 'Tomato']], dtype=tf.string)
 t3 = tf.constant([[[5], [6], [7]], [[4], [3], [2]]])
 
 # 打印上面创建的几个 Tensor
-print(t0)
-print(t1)
-print(t2)
-print(t3)
+# print(t0)
+# print(t1)
+# print(t2)
+# print(t3)
 
 # print 一个 Tensor 只能打印出它的属性定义，并不能打印出它的值，要想查看一个 Tensor 中的值还需要经过Session 运行一下
 sess = tf.Session()
-print(sess.run(t0))
-print(sess.run(t1))
-print(sess.run(t2))
-print(sess.run(t3))
+# print(sess.run(t0))
+# print(sess.run(t1))
+# print(sess.run(t2))
+# print(sess.run(t3))
+
+
+d50 = tf.placeholder(tf.float32, name ="input1")
+d51 = tf.sin(d50)
+print(sess.run(d51, feed_dict={d50: 0.2}))
+
