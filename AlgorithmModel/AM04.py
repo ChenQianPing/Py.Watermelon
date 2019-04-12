@@ -447,3 +447,21 @@ m19 = M.trade.v4(
     backtest_only=False,
     benchmark='000300.SHA'
 )
+
+
+
+# return_5
+# return_10
+# return_20
+# avg_amount_0/avg_amount_5
+# avg_amount_5/avg_amount_20
+# rank_avg_amount_0/rank_avg_amount_5
+# rank_avg_amount_5/rank_avg_amount_10
+# rank_return_0
+# rank_return_5
+# rank_return_10
+# rank_return_0/rank_return_5
+# rank_return_5/rank_return_10
+# pe_ttm_0
+
+
