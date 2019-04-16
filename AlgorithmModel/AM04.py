@@ -448,20 +448,41 @@ m19 = M.trade.v4(
     benchmark='000300.SHA'
 )
 
+#     特征                    特征权重值 gain
+# 当日收益排名 rank_return_0     10.9594
+# 5日收益     return_5           8.6437
+# 20日收益    return_20          6.7855
+# 10日收益    return_10          4.8333
+# 市盈率 (TTM) pe_ttm_0          4.6442
+# 10日收益排名 rank_return_10     3.9687
+# 5日收益排名  rank_return_5      3.3753
+# 5日/10日平均收益排名  rank_return_5/rank_return_10  2.9825
+# 5日/20日平均交易额    avg_amount_5/avg_amount_20    2.2347
+# 当日/5日平均交易额排名 rank_avg_amount_5/rank_avg_amount_10   2.1628
+# 当日/5日平均交易额    avg_amount_0/avg_amount_5               0.7626
+# 当日/5日平均收益排名   rank_return_0/rank_return_5            0.49
+# 5日/10日平均收益排名  rank_avg_amount_0/rank_avg_amount_5     0.3779
+
+# 第前i个交易日的开盘价，当天为0	open_$i
+# 第前i个交易日的收盘价 close_$i
+# 第前i个交易日的交易量 volume_$i
+# 第前i个交易日的最高价 high_$i
+# 第前i个交易日的最低价 low_$i
+# 过去i个交易日的收益，=close_0/close_(i+1)	 return_$i
+# 现金比率 fs_cash_ratio_0
+
+# close_1/close_0
+# volume_1/volume_0
+# max(close_0,open_0)/high_0
+# min(close_0,open_0)/low_0
+# return_80/return_10
+# fs_cash_ratio_0
 
 
-# return_5
-# return_10
-# return_20
-# avg_amount_0/avg_amount_5
-# avg_amount_5/avg_amount_20
-# rank_avg_amount_0/rank_avg_amount_5
-# rank_avg_amount_5/rank_avg_amount_10
-# rank_return_0
-# rank_return_5
-# rank_return_10
-# rank_return_0/rank_return_5
-# rank_return_5/rank_return_10
-# pe_ttm_0
+
+
+
+
+
 
 
