@@ -16,7 +16,7 @@ excludes = {"将军","却说","荆州","二人","不可","于是","今日",\
             "众将","后主","蜀兵","上马","大叫","太守","此人","夫人","先主","后人","背后","城中","天子","一面","何不",\
             "大军","忽报","先生","百姓","何故","然后","先锋","不如","赶来","原来","令人","江东","下马","喊声","正是",\
             "徐州","忽然","因此","成都","不见","未知","大败","大事","之后","一军","引军","起兵","军中","接应","进兵",\
-            "大惊","可以","以为","大怒","不得","心中","下文","一声","追赶","粮草"}
+            "大惊","可以","以为","大怒","不得","心中","下文","一声","追赶","粮草","丞相"}
 
 
 txt = open("threekingdoms.txt", "r", encoding='utf-8').read()
@@ -32,7 +32,7 @@ for word in words:
         rword = "关羽"
     elif word == "玄德" or word == "玄德曰":
          rword = "刘备"
-    elif word == "孟德" or word == "丞相":
+    elif word == "孟德":
          rword = "曹操"
     else:
          rword = word
@@ -48,35 +48,35 @@ for i in range(20):
     print("{0:<10}{1:>5}".format(word, count))
 
 
-def get_text():
-    f = open('threekingdoms.txt','r',encoding='utf-8').read()
-    words = jieba.lcut(f)
-    ls = []
-    for i in words:
-        if len(i)==1 or i in excludes:
-            continue
-        elif i in ['孟德','丞相']:
-            ls.append('曹操')
-        elif i in ['孔明曰','孔明','诸葛亮']:
-            ls.append('诸葛亮')
-        elif i in ['玄德曰', '玄德']:
-            ls.append('刘备')
-        elif i in ['关公', '云长','关公曰']:
-            ls.append('关羽')
-        elif i in ['都督']:
-            ls.append('周瑜')
-        else:
-            ls.append(i)
-    return ' '.join(ls)
-
-
-# 词云库
-# 加载形状图片要用到scipy库的imread方法
-
-img = imread('bg.jpg')
-txt = get_text()
-w = wordcloud.WordCloud(font_path='msyh.ttf',width=1000,height=500,background_color='white',mask=img)
-w.generate(txt)
-w.to_file('1.jpg')
+# def get_text():
+#     f = open('threekingdoms.txt','r',encoding='utf-8').read()
+#     words = jieba.lcut(f)
+#     ls = []
+#     for i in words:
+#         if len(i)==1 or i in excludes:
+#             continue
+#         elif i in ['孟德','丞相']:
+#             ls.append('曹操')
+#         elif i in ['孔明曰','孔明','诸葛亮']:
+#             ls.append('诸葛亮')
+#         elif i in ['玄德曰', '玄德']:
+#             ls.append('刘备')
+#         elif i in ['关公', '云长','关公曰']:
+#             ls.append('关羽')
+#         elif i in ['都督']:
+#             ls.append('周瑜')
+#         else:
+#             ls.append(i)
+#     return ' '.join(ls)
+#
+#
+# # 词云库
+# # 加载形状图片要用到scipy库的imread方法
+#
+# img = imread('bg.jpg')
+# txt = get_text()
+# w = wordcloud.WordCloud(font_path='msyh.ttf',width=1000,height=500,background_color='white',mask=img)
+# w.generate(txt)
+# w.to_file('1.jpg')
 
 
