@@ -25,3 +25,5 @@ for x,y in enumerate(sales):
 
 # 显示图形
 plt.show()
+
+
